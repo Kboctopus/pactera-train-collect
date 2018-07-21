@@ -15,8 +15,7 @@
 
 ## 采集程序在采集到type=maillist的时候将公共参数以特定顺序丢入kafka
 
-
-### 用户基本信息表: user_status (Hbase)
+### 用户基本信息表: user_status (Hbase), 用于大数据内部计算
 * rowKey: md5(uid)
 * cf: 0
 
@@ -29,10 +28,22 @@
 | ...     | 0:...     | ...     |
 
 
+### 离线统计结果表: user_action_result_daily(mySql), 用于后台管理查看按天的行为统计
+
+| date | coutry | province | count | user_count | pageid | actionid |
+| -------- | -------- | -------- | -------- | -------- | -------- | -------- |
+| Text     | Text     | Text     | Number     | Number     | Text     | Text     |
 
 
-| Column 1 | Column 2 | Column 3 |
-| -------- | -------- | -------- |
-| Text     | Text     | Text     |
+### 实时统计结果表: user_action_result_realtime(待定), 用于后台管理查看实时的行为统计
+
+| time | coutry | province | count  | pageid | actionid |
+| -------- | -------- | -------- | --------  | -------- | -------- |
+| ts     | Text     | Text     | Number   | Text     | Text     |
+
+
+
+
+
 
 
