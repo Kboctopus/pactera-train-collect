@@ -14,3 +14,25 @@
 * uid0001,view_page,btn_like,{"target":"uid0002"},China,SiChuan,ChengDu,...
 
 ## 采集程序在采集到type=maillist的时候将公共参数以特定顺序丢入kafka
+
+
+### 用户基本信息表: user_status (Hbase)
+* rowKey: md5(uid)
+* cf: 0
+
+| rowKey | cf | value |
+| -------- | -------- | -------- |
+| 12378617     | 0:country     | China     |
+| 12378617     | 0:city     | ChengDu     |
+| 12378617     | 0:channel     | appStore     |
+| 12378617     | 0:rom     | 6.3     |
+| ...     | 0:...     | ...     |
+
+
+
+
+| Column 1 | Column 2 | Column 3 |
+| -------- | -------- | -------- |
+| Text     | Text     | Text     |
+
+
